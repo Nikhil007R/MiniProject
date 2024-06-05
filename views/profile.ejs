@@ -15,7 +15,16 @@
         <div class="flex space-between items-baseline" >
 
             <div class="createContainer w-full">
-                <h3 class="text-3xl mb-5 mt-5 text-white"><span class="font-light text-yellow-400">Welcome Back! </span><%= user.name %></h3> 
+
+                <div class="flex items-center gap-3 ">
+                    <div class="w-10 h-10 rounded-md overflow-hidden">
+                        <a href="/profile/uploadFile">
+                            <img class="w-full h-full object-cover cursor-pointer" src="images/uploads/<%= user.profilePic%>" alt="">
+                        </a>
+                    </div>
+                    <h3 class="text-3xl mb-5 mt-5 text-white"><span class="font-light text-yellow-400">Welcome Back! </span><%= user.name %></h3> 
+                </div>
+
                 <h5 class="mb-5 text-green-300">You can create a new post</h5>
                 <form action="/post" method="post">
                     <textarea class="w-1/3 p-3 mb-2 resize-none outline-none bg-transparent border-2 border-zinc-800 rounded-md" placeholder="What's in your mind?" name="content"></textarea>
@@ -26,6 +35,7 @@
             <div class="logout">
                 <a class="bg-red-500 rounded-md px-3 py-2 text-sm inline-block" href="/logout">Logout</a>
             </div>
+            
         </div>
 
         <div class="posts mt-10">  <!--  post Container  -->
